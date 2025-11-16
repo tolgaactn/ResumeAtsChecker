@@ -1,8 +1,8 @@
-﻿
+﻿using ResumeAtsChecker.Services.Interfaces;
 using System.Text;
 using UglyToad.PdfPig;
 
-namespace ResumeAtsChecker.Services
+namespace ResumeAtsChecker.Services.Concretes
 {
     public class PdfService : IPdfService
     {

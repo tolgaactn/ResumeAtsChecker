@@ -1,4 +1,4 @@
-﻿namespace ResumeAtsChecker.Services
+﻿namespace ResumeAtsChecker.Services.Interfaces
 {
     public interface IPdfService
     {
