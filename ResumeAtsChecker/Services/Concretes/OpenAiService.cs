@@ -42,7 +42,7 @@ namespace ResumeAtsChecker.Services
                 new
                 {
                     role = "system",
-                    content = "You are an ATS expert. You analyze resumes and provide JSON responses with score, summary, missingKeywords, and suggestions."
+                    content = "Sen bir ATS (Başvuru Takip Sistemi) uzmanısın. CV'leri analiz eder ve TÜRKÇE yanıtlar verirsin. JSON formatında score, summary, missingKeywords ve suggestions döndürürsün. Tüm açıklamalar, özetler ve öneriler TÜRKÇE olmalıdır."
                 },
                 new
                 {
@@ -93,30 +93,30 @@ namespace ResumeAtsChecker.Services
 
         private string BuildPrompt(string resumeText, string jobDescription)
         {
-                        return $@"Analyze this resume against the job description for ATS (Applicant Tracking System) compatibility.
+            return $@"Bu CV'yi iş ilanına göre ATS (Başvuru Takip Sistemi) uyumluluğu açısından analiz et.
 
-            JOB DESCRIPTION:
-            {jobDescription}
+İŞ İLANI:
+{jobDescription}
 
-            RESUME:
-            {resumeText}
+CV:
+{resumeText}
 
-            Provide your analysis in the following JSON format (respond with ONLY this JSON, nothing else):
+Analizini aşağıdaki JSON formatında ver (SADECE bu JSON'u döndür, başka hiçbir şey yazma):
 
-            {{
-                ""score"": 85,
-                ""summary"": ""Brief overall assessment in 2-3 sentences explaining the match quality"",
-                ""missingKeywords"": [""keyword1"", ""keyword2"", ""keyword3""],
-                ""suggestions"": [""specific suggestion 1"", ""specific suggestion 2"", ""specific suggestion 3""]
-            }}
+{{
+    ""score"": 85,
+    ""summary"": ""2-3 cümle ile genel değerlendirme ve eşleşme kalitesi açıklaması (TÜRKÇE)"",
+    ""missingKeywords"": [""anahtar kelime1"", ""anahtar kelime2"", ""anahtar kelime3""],
+    ""suggestions"": [""öneri 1"", ""öneri 2"", ""öneri 3""]
+}}
 
-            Important:
-            - score: integer from 0-100 representing ATS compatibility
-            - summary: 2-3 sentence overall assessment
-            - missingKeywords: list of important keywords from job description that are missing in resume
-            - suggestions: list of 3-5 specific, actionable suggestions to improve the resume
+Önemli:
+- score: 0-100 arası ATS uyumluluk skoru
+- summary: 2-3 cümle genel değerlendirme (TÜRKÇE)
+- missingKeywords: İş ilanında olup CV'de eksik olan önemli anahtar kelimeler
+- suggestions: CV'yi geliştirmek için 3-5 spesifik, uygulanabilir öneri (TÜRKÇE)
 
-            Respond with ONLY the JSON object, no other text.";
+SADECE JSON objesini döndür, başka metin yazma. TÜM AÇIKLAMALAR TÜRKÇE OLMALIDIR.";
         }
 private AnalysisResponseDto ParseAiResponse(string aiResponse, string extractedText)
         {
@@ -174,10 +174,9 @@ private AnalysisResponseDto ParseAiResponse(string aiResponse, string extractedT
                 return new AnalysisResponseDto
                 {
                     Score = 50,
-                    Summary = "AI analysis completed but response format was unexpected",
-                    MissingKeywords = new List<string> { "Unable to extract keywords" },
-                    Suggestions = new List<string> { "Please try again with a different resume or job description" },
-                    ExtractedText = extractedText
+                    Summary = "AI analizi tamamlandı ancak yanıt formatı beklenmedik",
+                    MissingKeywords = new List<string> { "Anahtar kelimeler çıkarılamadı" },
+                    Suggestions = new List<string> { "Lütfen farklı bir CV veya iş ilanı ile tekrar deneyin" },
                 };
             }
         }
