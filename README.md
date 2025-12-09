@@ -147,12 +147,6 @@ CREATE TABLE analyses (
 );
 ```
 
-## 🔒 Güvenlik
-
-- ⚠️ `appsettings.json` dosyası `.gitignore`'a eklenmiştir
-- ⚠️ API anahtarlarınızı asla GitHub'a yüklemeyin
-- ⚠️ Production ortamında environment variables kullanın
-
 ## 💰 Maliyet
 
 - **OpenAI API:** ~$0.0002/analiz
@@ -186,8 +180,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 **Tolga Ahmet Çetin**
 
 - GitHub: [@tolgaactn](https://github.com/tolgaactn)
-- LinkedIn: [Tolga Açıtan](https://www.linkedin.com/in/tolgaacitan/)
-- Twitter: [@tacbuilds](https://twitter.com/tacbuilds)
+- LinkedIn: [Tolga Ahmet Çetin](https://www.linkedin.com/in/tolgactn/)
 
 ## 🙏 Teşekkürler
 
