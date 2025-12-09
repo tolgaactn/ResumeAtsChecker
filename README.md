@@ -183,7 +183,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## 👨‍💻 Geliştirici
 
-**Tolga Açıtan**
+**Tolga Ahmet Çetin**
 
 - GitHub: [@tolgaactn](https://github.com/tolgaactn)
 - LinkedIn: [Tolga Açıtan](https://www.linkedin.com/in/tolgaacitan/)
